@@ -5,7 +5,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Edit Coin Items</title>
+<style>
+	body {
+		background-color: green;
+	}
+	
+	form {
+		margin: auto;
+		border-style: solid;
+		}
+</style>
 </head>
 <body>
 

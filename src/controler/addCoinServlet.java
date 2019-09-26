@@ -33,15 +33,18 @@ public class addCoinServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		//add coin to database
+		
+		//get data from form
 		String price = request.getParameter("price");
 		String type = request.getParameter("type");
 		
-		 
-		
+		//create new coin item
 		CoinItem item = new CoinItem(type,Double.parseDouble(price));
 		
 		CoinController controller = new CoinController();
 		
+		//insert into database
 		controller.insert(item);
 		
 		getServletContext().getRequestDispatcher("/index.html").forward(request, response);

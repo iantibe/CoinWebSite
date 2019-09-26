@@ -5,25 +5,35 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Current Coin List</title>
+<style>
+	body {
+		background-color: green;
+		}
+	
+	form {
+		margin: auto;
+		border-style: solid;
+		}
+
+</style>
 </head>
 <body>
 
-<form method = "post" action = "navigationServlet">
-<table>
-<c:forEach items="${requestScope.allItems}" var="currentitem">
-<tr>
- <td><input type="radio" name="id" value="${currentitem.id}"></td>
- <td>${currentitem.price}</td>
- <td>${currentitem.type}</td>
- </tr>
-</c:forEach>
-</table>
-<input type = "submit" value = "edit" name="doThis">
-<input type = "submit" value = "delete" name="doThis">
-<input type="submit" value = "add" name = "doThis">
-</form>
-
+	<form method = "post" action = "navigationServlet">
+		<table>
+		<c:forEach items="${requestScope.allItems}" var="currentitem">
+		<tr>
+		 <td><input type="radio" name="id" value="${currentitem.id}"></td>
+		 <td>${currentitem.price}</td>
+		 <td>${currentitem.type}</td>
+		 </tr>
+		</c:forEach>
+		</table>
+	<input type = "submit" value = "edit" name="doThis">
+	<input type = "submit" value = "delete" name="doThis">
+	<input type="submit" value = "add" name = "doThis">
+	</form>
 
 </body>
 </html>

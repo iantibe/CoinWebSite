@@ -40,11 +40,16 @@ public class editItem extends HttpServlet {
 		//doGet(request, response);
 		
 		CoinController controler = new CoinController();
+		
+		//get data from form
 		String type = request.getParameter("type");
 		int id = Integer.parseInt(request.getParameter("id"));
 		double price = Double.parseDouble(request.getParameter("price"));
 		
+		//get data to edit
 		CoinItem toEdit = controler.searchById(id);
+		
+		//adjust with new data and update
 		toEdit.setPrice(price);
 		toEdit.setType(type);
 		

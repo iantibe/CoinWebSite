@@ -40,26 +40,35 @@ public class navigationServlet extends HttpServlet {
 		//doGet(request, response);
 		String act = request.getParameter("doThis");
 		if (act == null) {
-		getServletContext().getRequestDispatcher("/viewAllItemsServlet").
-		forward(request, response);
+			//if no item selected, just go back to view page
+			getServletContext().getRequestDispatcher("/viewAllItemsServlet").
+			forward(request, response);
 		} else if (act.equals("delete")) {
-		
+			
 			CoinController controller = new CoinController();	
+			
+			//get data to delete
 			int idNumber = Integer.parseInt(request.getParameter("id"));
 			CoinItem item = controller.searchById(idNumber);
 			
+			//delete from database
 			controller.delete(item);
 			getServletContext().getRequestDispatcher("/viewAllItemsServlet").forward(request, response);
 			
 		} else if (act.equals("edit")) {
 			CoinController controller = new CoinController();
+			
+			//get id to edit
 			int integerId = Integer.parseInt(request.getParameter("id"));
 			CoinItem edit = controller.searchById(integerId);
+			
+			//send to edit from to edit
 			request.setAttribute("itemToEdit", edit);
 			getServletContext().getRequestDispatcher("/edititem.jsp").forward(request, response);
 			
 			
 		} else if (act.equals("add")) {
+			//forward to main page for add
 		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
 		}
 	}

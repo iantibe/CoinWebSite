@@ -27,6 +27,8 @@ public class viewAllItemsServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		//displays coins on screen
 		CoinController controller = new CoinController();
 		request.setAttribute("allItems", controller.showCoins());
 		
