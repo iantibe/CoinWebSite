@@ -52,6 +52,12 @@ public class navigationServlet extends HttpServlet {
 			getServletContext().getRequestDispatcher("/viewAllItemsServlet").forward(request, response);
 			
 		} else if (act.equals("edit")) {
+			CoinController controller = new CoinController();
+			int integerId = Integer.parseInt(request.getParameter("id"));
+			CoinItem edit = controller.searchById(integerId);
+			request.setAttribute("itemToEdit", edit);
+			getServletContext().getRequestDispatcher("/edititem.jsp").forward(request, response);
+			
 			
 		} else if (act.equals("add")) {
 		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
