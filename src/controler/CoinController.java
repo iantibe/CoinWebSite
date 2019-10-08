@@ -9,6 +9,7 @@ package controler;
 	import javax.persistence.TypedQuery;
 
 	import model.CoinItem;
+import model.locationitem;
 
 	public class CoinController {
 		
@@ -86,6 +87,36 @@ package controler;
 			em.getTransaction().commit();
 			em.close();
 		}
-
+		
+		//added methods to manupliate location data
+		//return all location data
+		public List<locationitem> showlocation() {
+			EntityManager em = emfactory.createEntityManager();
+			List<locationitem> coinlist = em.createQuery("SELECT i FROM locationitem i").getResultList();
+			return coinlist;
+		}
+		
+		public void deletelocation(locationitem loc) {
+			EntityManager em = emfactory.createEntityManager();
+			em.getTransaction().begin();
+			TypedQuery<locationitem> query = em.createQuery("select i from locationitem i where i.locid = :inputtype", locationitem.class);
+			query.setParameter("inputtype", loc.getLocid());
+			
+			query.setMaxResults(1);
+			locationitem item = query.getSingleResult();
+			em.remove(item);
+			em.getTransaction().commit();
+			em.close();
+			
+		}
+		
+		public locationitem searchByLocationId(int id) {
+			EntityManager em = emfactory.createEntityManager();
+			em.getTransaction().begin();
+			locationitem result = em.find(locationitem.class, id);
+			em.close();
+			return result;
+		}
+		
 
 }
