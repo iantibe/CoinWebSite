@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>add location history</title>
+<title>add note</title>
 <style>
 	body {
 		background-color: green;
@@ -21,22 +21,22 @@
 </head>
 <body>
 
-<h1> select a coin to add a location to</h1>
+<h1> select a coin to add a note for</h1>
 
 <form method = "post" action = "addlocationdata">
 		<table>
 		<c:forEach items="${requestScope.allItems}" var="currentitem">
 		<tr>
 		 <td><input type="radio" name="id" value="${currentitem.id}"></td>
-		 <td>${currentitem.type}</td>
+		 <td>Coin Type: ${currentitem.type}</td>
 		 </tr>
 		</c:forEach>
 		</table>
-		<h2>enter location data below</h2>
+		<h2>enter note below</h2>
 		<input type="text" name="locationdata">
 	<input type="submit">
 	</form>
-
+	<a href="index.html">Return to main</a>
 
 </body>
 </html>

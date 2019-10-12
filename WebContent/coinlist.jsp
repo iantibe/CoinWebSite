@@ -25,8 +25,8 @@
 		<c:forEach items="${requestScope.allItems}" var="currentitem">
 		<tr>
 		 <td><input type="radio" name="id" value="${currentitem.id}"></td>
-		 <td>${currentitem.price}</td>
-		 <td>${currentitem.type}</td>
+		 <td>Coin Price: ${currentitem.price}</td>
+		 <td>Coin Type: ${currentitem.type}</td>
 		 </tr>
 		</c:forEach>
 		</table>
@@ -34,6 +34,6 @@
 	<input type = "submit" value = "delete" name="doThis">
 	<input type="submit" value = "add" name = "doThis">
 	</form>
-
+	<a href="index.html">Return to main</a>
 </body>
 </html>

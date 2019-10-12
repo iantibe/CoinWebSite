@@ -39,12 +39,20 @@ public class deletelocationdataservlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		
+		//create instance
 		CoinController controller = new CoinController();	
 		
+		//get id number
 		int idNumber = Integer.parseInt(request.getParameter("id"));
+		
+		//search for coin entry by id number
 		locationitem item = controller.searchByLocationId(idNumber);
+		
+		//delete
 		controller.deletelocation(item);
-		getServletContext().getRequestDispatcher("/deletelocation.jsp").forward(request, response);
+		
+		//return to main page
+		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
 	}
 
 }

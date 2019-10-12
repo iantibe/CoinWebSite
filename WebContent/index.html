@@ -12,6 +12,11 @@
 		margin: auto;
 		border-style: solid;
 		}
+	.links {
+	display:flex;
+	flex-direction: column;
+	
+	}
 </style>
 </head>
 <body>
@@ -23,9 +28,12 @@ Price of Coin: <input type ="text" name = "price">
 Type of Coin: <input type = "text" name = "type">
 <input type = "submit" value="Add Item">
 </form> <br />
+
+<div class="links">
 <a href = "viewAllItemsServlet">View the complete Coin list</a>
-<a href = "viewlocationservlet"> View item locations</a>
-<a href = "addlocationservlet"> add item locations</a>
-<a href = "deletelocationservlet"> Delete location</a>
+<a href = "viewlocationservlet"> View item Notes</a>
+<a href = "addlocationservlet"> Add item Notes</a>
+<a href = "deletelocationservlet"> Delete Notes</a>
+</div>
 </body>
 </html>

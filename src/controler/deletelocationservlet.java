@@ -29,6 +29,7 @@ public class deletelocationservlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
+		
 		CoinController controller = new CoinController();
 		request.setAttribute("allItems", controller.showlocation());
 		
@@ -36,7 +37,7 @@ public class deletelocationservlet extends HttpServlet {
 			request.setAttribute("allItems", " ");
 			}
 		
-		getServletContext().getRequestDispatcher("/deletelocation.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
 	}
 
 	/**

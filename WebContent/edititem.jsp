@@ -20,12 +20,12 @@
 <body>
 
 <form action = "editItem" method="post">
-Price <input type ="text" name = "price" value=
-"${itemToEdit.price}">
-Type of Coin <input type = "text" name = "type" value= "${itemToEdit.type}">
+Price: <input type ="text" name = "price" value="${itemToEdit.price}">
+Type of Coin: <input type = "text" name = "type" value= "${itemToEdit.type}">
 <input type = "hidden" name = "id" value="${itemToEdit.id}">
 <input type = "submit" value="Save">
 </form>
 
+<a href="index.html">Return to Main</a>
 </body>
 </html>

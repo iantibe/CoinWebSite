@@ -44,7 +44,7 @@ public class addlocationdata extends HttpServlet {
 		
 		//get coin id number and location info from page
 		int idNumber = Integer.parseInt(request.getParameter("id"));
-		String location = request.getParameter("location");
+		String location = request.getParameter("locationdata");
 		
 		//serach for coin by id number
 		CoinItem item = controller.searchById(idNumber);
@@ -60,7 +60,7 @@ public class addlocationdata extends HttpServlet {
 		locationcontroller instance = new locationcontroller();
 		instance.insert(itemtostore);
 		
-		getServletContext().getRequestDispatcher("/addlocation.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
 		
 	}
 
