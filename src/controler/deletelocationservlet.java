@@ -37,7 +37,7 @@ public class deletelocationservlet extends HttpServlet {
 			request.setAttribute("allItems", " ");
 			}
 		
-		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+		getServletContext().getRequestDispatcher("/deletelocation.jsp").forward(request, response);
 	}
 
 	/**
